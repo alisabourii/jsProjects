@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            font-size: 102px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            text-align: center;
+            margin-top: 28%;
+            border: revert
+
+        }
+        body{
+            background-image: linear-gradient(to right, rgba(255,0,0,0),blue, rgb(255, 251, 0));
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <p id="clock"></p>
+
+    <script>
+        var MyVar = setInterval(MyTimer,1000);
+        function MyTimer(){
+            const d = new Date();
+            document.getElementById("clock").innerHTML = d.toLocaleString();
+        }
+        // Set the date we're counting down to
+        
+    </script>
+</body>
+</html>
