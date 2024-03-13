@@ -25,6 +25,9 @@
             text-align: center;
             width: 60px;
         }
+        button{
+            margin-left: 10%;
+        }
         
     </style>
 </head>
@@ -39,12 +42,13 @@
         Hour : <input type="number" id="Hour">
         Minutes : <input type="number" id="Minutes">
         <br><br>
-        <Button type="button" class="btn btn-primary" style="margin-left:20%;" onclick="setTimer()">SET</Button>
+        <Button type="button" class="btn btn-primary" onclick="setTimer()">SET</Button>
+        <button type="button" class="btn btn-danger" onclick="Stop()">Stop</button>
     </div>
     <p id="clock"></p>
     <script>
         var nowTime = new Date();
-    
+        var alarm = new Audio("alarm.wav")
         if(document.getElementById("Year").value == ""){
             document.getElementById("Year").value = nowTime .getFullYear();
         }
@@ -93,9 +97,15 @@
             if (distance < 0) {
                 clearInterval(x);
                 document.getElementById("clock").innerHTML = "EXPIRED";
+                alarm.play();
             }
             }, 1000);
-    }
+        }
+
+        
+        function Stop(){
+            window.location.reload();
+        }
         
     </script>
 </body>
